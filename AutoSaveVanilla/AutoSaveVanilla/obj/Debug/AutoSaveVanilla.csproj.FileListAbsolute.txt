@@ -16,3 +16,23 @@ c:\users\pcc\documents\visual studio 2012\Projects\AutoSaveVanilla\AutoSaveVanil
 c:\users\pcc\documents\visual studio 2012\Projects\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.exe
 c:\users\pcc\documents\visual studio 2012\Projects\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.pdb
 C:\Users\PCC\documents\visual studio 2012\Projects\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\App.baml
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\bin\Debug\AutoSaveVanilla.exe.config
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\bin\Debug\AutoSaveVanilla.exe
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\bin\Debug\AutoSaveVanilla.pdb
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.csprojAssemblyReference.cache
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\MainWindow.baml
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\App.baml
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\MainWindow.g.cs
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\App.g.cs
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla_MarkupCompile.cache
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.g.resources
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.Properties.Resources.resources
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.csproj.GenerateResource.cache
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.csproj.CoreCompileInputs.cache
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.csproj.CopyComplete
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.exe
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\AutoSaveVanilla.pdb

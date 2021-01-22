@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Debug\
+C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\obj\Release\
 AutoSaveVanilla
 none
 false
-DEBUG;TRACE
+TRACE
 C:\GitHub\AutoSaveVanilla\AutoSaveVanilla\AutoSaveVanilla\App.xaml
 11151548125
 

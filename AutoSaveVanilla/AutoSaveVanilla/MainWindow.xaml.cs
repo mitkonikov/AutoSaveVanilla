@@ -35,43 +35,41 @@ namespace AutoSaveVanilla
             InitializeComponent();
         }
 
-        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dTimerAutoSave.Tick += dispatcherTimer_Tick;
 
-            // By Default settings
+            // Default settings
             checkBox.IsChecked = true;
             AutoSaveTimeBox.Text = "10";
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e) // Browse for the world
+        private void Browse_World_Path(object sender, RoutedEventArgs e) // Browse for the world
         {
-            CommonOpenFileDialog cofd = new CommonOpenFileDialog();
-            cofd.IsFolderPicker = true;
-            if (cofd.ShowDialog() == CommonFileDialogResult.Ok)
+            CommonOpenFileDialog fileDialog = new CommonOpenFileDialog();
+            fileDialog.IsFolderPicker = true;
+            if (fileDialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                worldPath = cofd.FileName;
+                worldPath = fileDialog.FileName;
                 worldBox.Text = worldPath;
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e) // Browse for the backup location
+        private void Browse_Backup_Path(object sender, RoutedEventArgs e) // Browse for the backup location
         {
-            CommonOpenFileDialog cofd = new CommonOpenFileDialog();
-            cofd.IsFolderPicker = true;
-            if (cofd.ShowDialog() == CommonFileDialogResult.Ok)
+            CommonOpenFileDialog fileDialog = new CommonOpenFileDialog();
+            fileDialog.IsFolderPicker = true;
+            if (fileDialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                backupPath = cofd.FileName;
+                backupPath = fileDialog.FileName;
                 backupBox.Text = backupPath;
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e) // Start Auto-Saving
+        private void Start_AutoSave(object sender, RoutedEventArgs e) // Start Auto-Saving
         {
             if (isSaving == false)
             {
-                try
-                {
                     if (worldBox.Text == "")
                     {
                         worldBox.Background = new SolidColorBrush(Color.FromRgb((byte)212, (byte)58, (byte)58));
@@ -96,22 +94,24 @@ namespace AutoSaveVanilla
                             }
                             else
                             {
-                                // Reset color
-                                AutoSaveTimeBox.Background = new SolidColorBrush(Color.FromRgb((byte)83, (byte)83, (byte)83));
+                                try
+                                {
+                                    // Reset color
+                                    AutoSaveTimeBox.Background = new SolidColorBrush(Color.FromRgb((byte)83, (byte)83, (byte)83));
 
-                                dTimerAutoSave.Interval = new TimeSpan(0, Convert.ToInt16(AutoSaveTimeBox.Text), 0);
-                                dTimerAutoSave.Start();
-                                Saving();
-                                saveBtn.Content = "Stop Auto-Saving";
-                                isSaving = true;
+                                    dTimerAutoSave.Interval = new TimeSpan(0, Convert.ToInt16(AutoSaveTimeBox.Text), 0);
+                                    dTimerAutoSave.Start();
+                                    CounterLabel.Content = "Counter: 0";
+                                    Saving();
+                                    saveBtn.Content = "Stop Auto-Saving";
+                                    isSaving = true;
+                                } catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
                             }
                         }
                     }
-                }
-                catch
-                {
-
-                }
             }
             else
             {
@@ -119,7 +119,6 @@ namespace AutoSaveVanilla
                 saveBtn.Content = "Start Auto-Saving";
                 isSaving = false;
                 counter = 0;
-                CounterLabel.Content = "Counter: 0";
             }
         }
 
@@ -151,20 +150,15 @@ namespace AutoSaveVanilla
             try
             {
                 string[] worldDirNameArray = worldPath.Split((char)92);
-                string backupDirName = worldDirNameArray[worldDirNameArray.Length - 1];
+                string worldDirName = worldDirNameArray[worldDirNameArray.Length - 1];
                 string datetimeNow = DateTime.Now.ToShortDateString() + "-" + DateTime.Now.ToShortTimeString();
-                string datetimeMod = datetimeNow.Replace(".", "-");
-                datetimeMod = datetimeMod.Replace(":", "-");
-                backupPathFinal = backupPath + @"\" + backupDirName + "-" + datetimeMod;
+                string datetimeMod = datetimeNow.Replace('.', '-').Replace(':', '-').Replace('/', '-');
+                backupPathFinal = backupPath + @"\" + worldDirName + "-" + datetimeMod;
                 string status = DirectoryCopy(worldPath, backupPathFinal, true);
                 if (status == "Done")
                 {
                     counter++;
                     CounterLabel.Content = "Counter: " + counter;
-                }
-                else
-                {
-
                 }
             }
             catch (Exception ex)
@@ -229,6 +223,16 @@ namespace AutoSaveVanilla
             AutoSaveLabel.IsEnabled = true;
             AutoSaveCounterBox.IsEnabled = true;
             TimesLabel.IsEnabled = true;
+        }
+
+        private void worldBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            worldPath = worldBox.Text;
+        }
+
+        private void backupBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            backupPath = backupBox.Text;
         }
     }
 }
